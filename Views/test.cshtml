@@ -1,0 +1,23 @@
+
+
+<h1>Here is your word</h1>
+<h1>@Model.GetStringWord()</h1>
+<h1>@Model.GetWorldLength()</h1>
+<h1>
+@for(var i =0; i <@Model.GetWorldLength();i++){
+  <span> _ </span>
+}
+</h1>
+<h1>Correct:@Model.GetCorrectGuess()</h1>
+
+<h1>InCorrect:@Model.GetIncorrectGuess()</h1>
+
+<p>
+  <a href="/">GO HOME</a>
+</p>
+<form action="/makeguss" method="post">
+  <input id='player-id' name='player-id' type='text' value='@Model.GetId()' >
+  <label for="guess">Enter your guess.</label>
+  <input type="text" name=guess id="guess">
+  <button type="submit" name="button">Submit</button>
+</form>
