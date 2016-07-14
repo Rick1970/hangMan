@@ -42,7 +42,10 @@ namespace HangMan.objects
     {
       return _id;
     }
-
+    public List<string> GetWords()
+    {
+      return _words;
+    }
     public string GetStringWord()
     {
       return _stringWord;
@@ -72,7 +75,10 @@ namespace HangMan.objects
     {
       _correctGuess = newCorrectGuess;
     }
-
+    public void SetStringWord(string newStringWord)
+    {
+      _stringWord = newStringWord;
+    }
     public List<string> GetAllChar()
     {
       return _words;
@@ -87,6 +93,9 @@ namespace HangMan.objects
      if (temp.Contains(guess))
      {
        this.SetCorrectGuess(this.GetCorrectGuess()+1);
+       Console.WriteLine(this.GetStringWord());
+       this.SetStringWord(this.GetStringWord().Replace(guess,"*"));
+        Console.WriteLine(this.GetStringWord().Replace(guess,"*"));
      }
      else{
        this.SetIncorrectGuess(this.GetIncorrectGuess()+1);

@@ -5,7 +5,13 @@
 <h1>@Model.GetWorldLength()</h1>
 <h1>
 @for(var i =0; i <@Model.GetWorldLength();i++){
-  <span> _ </span>
+  if(@Model.GetStringWord()[i]!="*")
+  {
+    <span> _ </span>
+  }
+  else{
+    <span>@Model.GetWords()[i]</span>
+  }
 }
 </h1>
 <h1>Correct:@Model.GetCorrectGuess()</h1>
@@ -16,7 +22,7 @@
   <a href="/">GO HOME</a>
 </p>
 <form action="/makeguss" method="post">
-  <input id='player-id' name='player-id' type='text' value='@Model.GetId()' >
+  <input id='player-id' name='player-id' type='hidden' value='@Model.GetId()' >
   <label for="guess">Enter your guess.</label>
   <input type="text" name=guess id="guess">
   <button type="submit" name="button">Submit</button>
