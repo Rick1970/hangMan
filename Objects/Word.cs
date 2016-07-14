@@ -23,6 +23,7 @@ namespace HangMan.objects
     {
 
       _words=secertWord;
+      Console.WriteLine(_words);
       guessStringWord="";
       _stringWord=string.Join("",secertWord.ToArray());
       _worldLength=secertWord.Count;
@@ -32,6 +33,9 @@ namespace HangMan.objects
       _id=_info.Count;
       Console.WriteLine(_id);
     }
+
+
+
     public static Word FindGame(int searchId)
     {
       return _info[searchId-1];
@@ -42,10 +46,7 @@ namespace HangMan.objects
     {
       return _id;
     }
-    public List<string> GetWords()
-    {
-      return _words;
-    }
+
     public string GetStringWord()
     {
       return _stringWord;
@@ -94,8 +95,8 @@ namespace HangMan.objects
      {
        this.SetCorrectGuess(this.GetCorrectGuess()+1);
        Console.WriteLine(this.GetStringWord());
-       this.SetStringWord(this.GetStringWord().Replace(guess,"*"));
-        Console.WriteLine(this.GetStringWord().Replace(guess,"*"));
+       this.SetStringWord(this.GetStringWord().Replace(guess,"0"));
+        Console.WriteLine(this.GetStringWord().Replace(guess,"0"));
      }
      else{
        this.SetIncorrectGuess(this.GetIncorrectGuess()+1);
