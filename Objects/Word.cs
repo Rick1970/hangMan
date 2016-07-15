@@ -15,7 +15,7 @@ namespace HangMan.objects
     private static List<string> _words = new List<string>{};
     public static List<string> GuessWord = new List<string>{};
     public static List<Word> _info = new List<Word>{};
-
+    public string imageSrc;
     public string guessStringWord;
 
 
@@ -31,9 +31,9 @@ namespace HangMan.objects
       _incorrectGuess=0;
       _info.Add(this);
       _id=_info.Count;
+      imageSrc="1";
       Console.WriteLine(_id);
     }
-
 
 
     public static Word FindGame(int searchId)
@@ -100,7 +100,7 @@ namespace HangMan.objects
      }
      else{
        this.SetIncorrectGuess(this.GetIncorrectGuess()+1);
-
+       this.imageSrc="Content/img/"+this.GetIncorrectGuess()+".png";
      }
     }
   }

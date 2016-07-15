@@ -17,6 +17,9 @@
 
 </h1>
 <h1>Correct:@Model.GetCorrectGuess()</h1>
+@if(Model.GetIncorrectGuess()>0){
+<img src="@Url.Content(Model.imageSrc)"/>
+}
 
 <h1>InCorrect:@Model.GetIncorrectGuess()</h1>
 
