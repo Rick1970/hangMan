@@ -95,8 +95,8 @@ namespace HangMan.objects
      {
        this.SetCorrectGuess(this.GetCorrectGuess()+1);
        Console.WriteLine(this.GetStringWord());
-       this.SetStringWord(this.GetStringWord().Replace(guess,"0"));
-        Console.WriteLine(this.GetStringWord().Replace(guess,"0"));
+       this.SetStringWord(this.GetStringWord().Replace(guess,"*"));
+        Console.WriteLine(this.GetStringWord().Replace(guess,"*"));
      }
      else{
        this.SetIncorrectGuess(this.GetIncorrectGuess()+1);
